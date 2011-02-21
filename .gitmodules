@@ -1,3 +1,18 @@
 [submodule "bundle/vim-pathogen"]
 	path = bundle/vim-pathogen
 	url = git://github.com/tpope/vim-pathogen.git
+[submodule "bundle/minibufexpl.vim"]
+	path = bundle/minibufexpl.vim
+	url = git://github.com/fholgado/minibufexpl.vim.git
+[submodule "bundle/vim-surround"]
+	path = bundle/vim-surround
+	url = git://github.com/tpope/vim-surround
+[submodule "bundle/eregex.vim"]
+	path = bundle/eregex.vim
+	url = git://github.com/othree/eregex.vim
+[submodule "vim-mru"]
+	path = vim-mru
+	url = git://github.com/ornicar/vim-mru.git
+[submodule "bundle/vim-mru"]
+	path = bundle/vim-mru
+	url = git://github.com/ornicar/vim-mru.git
