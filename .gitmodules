@@ -4,9 +4,6 @@
 [submodule "bundle/minibufexpl.vim"]
 	path = bundle/minibufexpl.vim
 	url = git://github.com/fholgado/minibufexpl.vim.git
-[submodule "bundle/vim-surround"]
-	path = bundle/vim-surround
-	url = git://github.com/tpope/vim-surround
 [submodule "bundle/eregex.vim"]
 	path = bundle/eregex.vim
 	url = git://github.com/othree/eregex.vim
@@ -22,3 +19,6 @@
 [submodule "bundle/zencoding-vim"]
 	path = bundle/zencoding-vim
 	url = git://github.com/mattn/zencoding-vim
+[submodule "bundle/vim-surround"]
+	path = bundle/vim-surround
+	url = git://github.com/kana/vim-surround
