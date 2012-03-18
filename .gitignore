@@ -1,5 +1,6 @@
 .DS_Store
 .netrwhist
-bundle
+bundle/*
+!bundle/neobundle.vim
 doc/tags*
 
