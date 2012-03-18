@@ -1,27 +1,3 @@
-[submodule "bundle/vim-pathogen"]
-	path = bundle/vim-pathogen
-	url = git://github.com/tpope/vim-pathogen.git
-[submodule "bundle/minibufexpl.vim"]
-	path = bundle/minibufexpl.vim
-	url = git://github.com/fholgado/minibufexpl.vim.git
-[submodule "bundle/eregex.vim"]
-	path = bundle/eregex.vim
-	url = git://github.com/othree/eregex.vim
-[submodule "bundle/vim-mru"]
-	path = bundle/vim-mru
-	url = git://github.com/ornicar/vim-mru.git
-[submodule "bundle/vimshell"]
-	path = bundle/vimshell
-	url = git://github.com/Shougo/vimshell
-[submodule "bundle/vimproc"]
-	path = bundle/vimproc
-	url = git://github.com/Shougo/vimproc
-[submodule "bundle/zencoding-vim"]
-	path = bundle/zencoding-vim
-	url = git://github.com/mattn/zencoding-vim
-[submodule "bundle/vim-surround"]
-	path = bundle/vim-surround
-	url = git://github.com/kana/vim-surround
-[submodule "vundle"]
-	path = vundle
-	url = http://github.com/gmarik/vundle.git
+[submodule "neobundle.vim"]
+	path = neobundle.vim
+	url = https://github.com/Shougo/neobundle.vim
