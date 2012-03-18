@@ -1,1 +1,0 @@
-/Users/suVene/dev/svn/vimdoc-ja-read-only/runtime/syntax/help_ja.vim
