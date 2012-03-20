@@ -1,5 +1,6 @@
 .DS_Store
 .netrwhist
+autoload/*so
 bundle/*
 !bundle/neobundle.vim
 doc/tags*
