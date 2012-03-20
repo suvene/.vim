@@ -20,9 +20,9 @@ let loaded_keisen=1
 "Commands:
 command! -nargs=? Keisen :call <sid>Map(<q-args>)
 "like jvim
-if maparg('gx', 'n')==# ''
-    nnoremap <silent> gx :call <sid>Map('')<cr>
-endif
+"if maparg('gk', 'n')==# ''
+"    nnoremap <silent> gk :call <sid>Map('')<cr>
+"endif
 
 "=============================================================================
 "Variables:
