@@ -456,6 +456,7 @@ call vundle#rc()
 " NeoBundle 'FuzzyFinder'
 NeoBundle 'grep.vim'
 NeoBundle 'ruby.vim'
+NeoBundle 'sudo.vim'
 
 "" non github repos
 " NeoBundle 'git://git.wincent.com/command-t.git'
