@@ -83,7 +83,9 @@ if filereadable($VIM . '/vimrc') && filereadable($VIM . '/ViMrC')
 endif
 
 " コンソールでのカラー表示のための設定(暫定的にUNIX専用)
-set t_Co=256
+" t_Coを指定しているとtmuxでは色が正しくでないのでコメントに
+"   via. 時代はGNU screenからtmuxへ - Dマイナー志向 http://d.hatena.ne.jp/tmatsuu/20090709/1247150771
+" set t_Co=256
 "if has('unix') && !has('gui_running') && !has('gui_macvim')
 if has('unix') && !has('gui_running')
     let uname = system('uname')
@@ -491,7 +493,7 @@ let g:miniBufExplMapWindowNavVim = 1
 let g:miniBufExplMapWindowNavArrows = 1
 let g:miniBufExplMapCTabSwitchBuffs = 1
 " GNU screen likeなキーバインド
-let mapleader = "^F"
+let mapleader = "^f"
 nnoremap <Leader><Space> :MBEbn<CR>
 nnoremap <Leader>n       :MBEbn<CR>
 nnoremap <Leader><C-n>   :MBEbn<CR>
