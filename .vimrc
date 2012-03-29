@@ -406,6 +406,8 @@ else
     autocmd MyAutoCmd BufWritePost $MYGVIMRC if has('gui_running') | source $MYGVIMRC
 endif
 
+nnoremap <Space>gn :<C-u>w<CR>:Git now<CR>
+nnoremap <Space>gN :<C-u>w<CR>:Git now --all<CR>
 " keymaps }}}
 "--------------------------------------
 
@@ -445,6 +447,7 @@ NeoBundle 'othree/eregex.vim'
 NeoBundle 'ornicar/vim-mru'
 NeoBundle 'mattn/zencoding-vim'
 NeoBundle 'mattn/gist-vim'
+NeoBundle 'motemen/git-vim'
 NeoBundle 'kana/vim-surround'
 NeoBundle 'gmarik/vundle'
 " BundleSearch 用に
@@ -493,7 +496,7 @@ let g:miniBufExplMapWindowNavVim = 1
 let g:miniBufExplMapWindowNavArrows = 1
 let g:miniBufExplMapCTabSwitchBuffs = 1
 " GNU screen likeなキーバインド
-let mapleader = "^f"
+" let mapleader = "^f"
 nnoremap <Leader><Space> :MBEbn<CR>
 nnoremap <Leader>n       :MBEbn<CR>
 nnoremap <Leader><C-n>   :MBEbn<CR>
