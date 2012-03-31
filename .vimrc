@@ -84,13 +84,15 @@ endif
 
 " コンソールでのカラー表示のための設定(暫定的にUNIX専用)
 " t_Coを指定しているとtmuxでは色が正しくでないのでコメントに
-"   via. 時代はGNU screenからtmuxへ - Dマイナー志向 http://d.hatena.ne.jp/tmatsuu/20090709/1247150771
+"   via. 時代はGNU screenからtmuxへ - Dマイナー志向
+"     http://d.hatena.ne.jp/tmatsuu/20090709/1247150771
 " set t_Co=256
 "if has('unix') && !has('gui_running') && !has('gui_macvim')
 if has('unix') && !has('gui_running')
     let uname = system('uname')
     if uname =~? "linux"
-        set term=builtin_linux
+        " set term=builtin_linux
+        set term=xterm-256color
     elseif uname =~? "freebsd"
         set term=builtin_cons25
     elseif uname =~? "Darwin"
