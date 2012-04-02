@@ -651,7 +651,7 @@ let g:unite_source_file_mru_time_format = ''
 let g:unite_enable_start_insert = 1
 let g:unite_source_file_mru_ignore_pattern='.*\/$\|.*Application\ Data.*'
 noremap [unite] <Nop>
-nmap <C-f> [unite]
+nmap <space> [unite]
 nnoremap <silent> [unite]f :<C-u>UniteWithBufferDir -buffer-name=file buffer file_mru bookmark file<CR>
 nnoremap <silent> [unite]b :<C-u>Unite -buffer-name=file buffer file_mru bookmark file<CR>
 nnoremap <silent> [unite]r :<C-u>Unite -buffer-name=register register<CR>
