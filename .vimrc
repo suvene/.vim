@@ -482,6 +482,7 @@ NeoBundle 'mattn/gist-vim'
 NeoBundle 'motemen/git-vim'
 NeoBundle 'kana/vim-surround'
 NeoBundle 'gmarik/vundle'
+NeoBundle 'tpope/vim-rails'
 " BundleSearch 用に
 if !exists("loaded") | set runtimepath+=~/.vim/bundle/vundle.git/ | endif
 call vundle#rc()
@@ -493,7 +494,6 @@ call vundle#rc()
 " NeoBundle 'FuzzyFinder'
 NeoBundle 'grep.vim'
 NeoBundle 'ruby.vim'
-NeoBundle 'rails.vim'
 NeoBundle 'sudo.vim'
 
 "" non github repos
