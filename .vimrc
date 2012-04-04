@@ -370,6 +370,12 @@ nmap K <C-u>
 " }
 " 挿入モードでCtrl+kを押すとクリップボードの内容を貼り付けられるようにする
 imap <C-K> <ESC>"*pa
+" omni補完(rubyとか)
+imap <C-Space> <C-x><C-o>
+let g:rubycomplete_buffer_loading = 1
+let g:rubycomplete_classes_in_global = 1
+let g:rubycomplete_rails = 1
+
 " Ctrl+Shift+Jで上に表示しているウィンドウをスクロールさせる
 nnoremap <C-S-J> <C-W>k<C-E><C-W><C-W>
 
@@ -410,6 +416,30 @@ endif
 
 nnoremap <Space>gn :<C-u>w<CR>:Git now<CR>
 nnoremap <Space>gN :<C-u>w<CR>:Git now --all<CR>
+
+" for quickfix
+" via. Vim: quickfix用key mappings - while ("im automaton"); http://whileimautomaton.net/2007/02/16165600
+nnoremap Q q
+
+nnoremap qj  :cnext<Return>
+nnoremap qk  :cprevious<Return>
+nnoremap qr  :crewind<Return>
+nnoremap qK  :cfirst<Return>
+nnoremap qJ  :clast<Return>
+nnoremap qf  :cnfile<Return>
+nnoremap qF  :cpfile<Return>
+nnoremap ql  :clist<Return>
+nnoremap qq  :cc<Return>
+nnoremap qo  :copen<Return>
+nnoremap qc  :cclose<Return>
+nnoremap qw  :cwindow<Return>
+nnoremap qp  :colder<Return>
+nnoremap qn  :cnewer<Return>
+nnoremap qm  :make<Return>
+nnoremap qM  :make<Space>
+nnoremap qg  :grep<Space>
+nnoremap qr  :cexpr ""<Return>
+nnoremap q   <Nop>
 " keymaps }}}
 "--------------------------------------
 
@@ -463,6 +493,7 @@ call vundle#rc()
 " NeoBundle 'FuzzyFinder'
 NeoBundle 'grep.vim'
 NeoBundle 'ruby.vim'
+NeoBundle 'rails.vim'
 NeoBundle 'sudo.vim'
 
 "" non github repos
@@ -647,15 +678,20 @@ let g:rubycomplete_rails = 1
 imap <C-Space> <C-x><C-o>"}}}
 
 " Unite {{{
-let g:unite_source_file_mru_time_format = ''
 let g:unite_enable_start_insert = 1
+let g:unite_source_file_mru_limit=100
+let g:unite_source_file_mru_time_format = ''
 let g:unite_source_file_mru_ignore_pattern='.*\/$\|.*Application\ Data.*'
 noremap [unite] <Nop>
 nmap <space> [unite]
-nnoremap <silent> [unite]f :<C-u>UniteWithBufferDir -buffer-name=file buffer file_mru bookmark file<CR>
-nnoremap <silent> [unite]b :<C-u>Unite -buffer-name=file buffer file_mru bookmark file<CR>
+nnoremap <silent> [unite]f :<C-u>UniteWithBufferDir -buffer-name=file file<CR>
+nnoremap <silent> [unite]b :<C-u>Unite -buffer-name=file buffer<CR>
+nnoremap <silent> [unite]m :<C-u>Unite -buffer-name=file file_mru bookmark file buffer<CR>
 nnoremap <silent> [unite]r :<C-u>Unite -buffer-name=register register<CR>
+nnoremap <silent> [unite]c :<C-u>Unite -buffer-name=bookmark bookmark<CR>
+nnoremap <silent> [unite]a :<C-u>UniteBookmarkAdd<CR>
 
+au FileType unite imap <buffer> jj <Plug>(unite_insert_leave)
 " ウィンドウを分割して開く
 au FileType unite nnoremap <silent> <buffer> <expr> <C-h> unite#do_action('split')
 au FileType unite inoremap <silent> <buffer> <expr> <C-h> unite#do_action('split')
