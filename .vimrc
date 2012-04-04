@@ -370,7 +370,7 @@ nmap K <C-u>
 " }
 " 挿入モードでCtrl+kを押すとクリップボードの内容を貼り付けられるようにする
 imap <C-K> <ESC>"*pa
-" omni補完(rubyとか)
+" Rubyのオムニ補完を設定(ft-ruby-omni)"{{{
 imap <C-Space> <C-x><C-o>
 let g:rubycomplete_buffer_loading = 1
 let g:rubycomplete_classes_in_global = 1
@@ -670,12 +670,6 @@ set migemodict=$VIMRUNTIME/dict/migemo-dict
 set migemo
 endif
 "}}}
-
-" Rubyのオムニ補完を設定(ft-ruby-omni)"{{{
-let g:rubycomplete_buffer_loading = 1
-let g:rubycomplete_classes_in_global = 1
-let g:rubycomplete_rails = 1
-imap <C-Space> <C-x><C-o>"}}}
 
 " Unite {{{
 let g:unite_enable_start_insert = 1
