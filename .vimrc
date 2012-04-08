@@ -475,6 +475,7 @@ NeoBundle 'Shougo/unite.vim'
 " NeoBundle 'tpope/vim-fugitive'
 " NeoBundle 'Lokaltog/vim-easymotion'
 " NeoBundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+NeoBundle 'vim-jp/vimdoc-ja'
 NeoBundle 'fholgado/minibufexpl.vim'
 NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'othree/eregex.vim'
