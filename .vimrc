@@ -462,7 +462,7 @@ if has('vim_starting')
 endif
 " let NeoBundle manage NeoBundle
 " required!
-" NeoBundle 'Shougo/neobundle.vim'
+NeoBundle 'Shougo/neobundle.vim'
 " recommended to install
 NeoBundle 'Shougo/vimproc'
 " after install, turn shell ~/.vim/bundle/vimproc, (n,g)make -f your_machines_makefile
@@ -485,6 +485,7 @@ NeoBundle 'motemen/git-vim'
 NeoBundle 'kana/vim-surround'
 NeoBundle 'gmarik/vundle'
 NeoBundle 'tpope/vim-rails'
+NeoBundle 'scrooloose/nerdtree'
 " BundleSearch 用に
 if !exists("loaded") | set runtimepath+=~/.vim/bundle/vundle.git/ | endif
 call vundle#rc()
@@ -722,6 +723,9 @@ call unite#set_substitute_pattern('file', '\\\@<! ', '\\ ', -20)
 call unite#set_substitute_pattern('file', '\\ \@!', '/', -30)
 " }}}
 
+" NERTTreeToggle {{{
+nnoremap <Leader>n :NERDTreeToggle<CR>
+" }}}
 " for plugins }}}
 " }
 "---------------------------------------
