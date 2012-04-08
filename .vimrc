@@ -5,6 +5,8 @@
 "   @see http://d.hatena.ne.jp/yuroyoro/20101104/1288879591
 "---------------------------------------
 
+let mapleader = ","
+
 "---------------------------------------
 " 初期設定 {{{
 "---------------------------------------
@@ -370,7 +372,7 @@ nmap K <C-u>
 " }
 " 挿入モードでCtrl+kを押すとクリップボードの内容を貼り付けられるようにする
 imap <C-K> <ESC>"*pa
-" Rubyのオムニ補完を設定(ft-ruby-omni)"{{{
+" Rubyのオムニ補完を設定(ft-ruby-omni)"
 imap <C-Space> <C-x><C-o>
 let g:rubycomplete_buffer_loading = 1
 let g:rubycomplete_classes_in_global = 1
@@ -528,35 +530,35 @@ filetype plugin indent on     " required!
 let g:miniBufExplMapWindowNavVim = 1
 let g:miniBufExplMapWindowNavArrows = 1
 let g:miniBufExplMapCTabSwitchBuffs = 1
-" GNU screen likeなキーバインド
-" let mapleader = "^f"
-nnoremap <Leader><Space> :MBEbn<CR>
-nnoremap <Leader>n       :MBEbn<CR>
-nnoremap <Leader><C-n>   :MBEbn<CR>
-nnoremap <Leader>p       :MBEbp<CR>
-nnoremap <Leader><C-p>   :MBEbp<CR>
-nnoremap <Leader>c       :new<CR>
-nnoremap <Leader><C-c>   :new<CR>
-nnoremap <Leader>k       :bd<CR>
-nnoremap <Leader><C-k>   :bd<CR>
-nnoremap <Leader>s       :IncBufSwitch<CR>
-nnoremap <Leader><C-s>   :IncBufSwitch<CR>
-nnoremap <Leader><Tab>   :wincmd w<CR>
-nnoremap <Leader>Q       :only<CR>
-nnoremap <Leader>w       :ls<CR>
-nnoremap <Leader><C-w>   :ls<CR>
-nnoremap <Leader>a       :e #<CR>
-nnoremap <Leader><C-a>   :e #<CR>
-nnoremap <Leader>"       :BufExp<CR>
-nnoremap <Leader>1   :e #1<CR>
-nnoremap <Leader>2   :e #2<CR>
-nnoremap <Leader>3   :e #3<CR>
-nnoremap <Leader>4   :e #4<CR>
-nnoremap <Leader>5   :e #5<CR>
-nnoremap <Leader>6   :e #6<CR>
-nnoremap <Leader>7   :e #7<CR>
-nnoremap <Leader>8   :e #8<CR>
-nnoremap <Leader>9   :e #9<CR>
+noremap [minibuf] <Nop>
+nmap <C-W> [minibuf]
+nnoremap [minibuf]<Space> :MBEbn<CR>
+nnoremap [minibuf]n       :MBEbn<CR>
+nnoremap [minibuf]<C-n>   :MBEbn<CR>
+nnoremap [minibuf]p       :MBEbp<CR>
+nnoremap [minibuf]<C-p>   :MBEbp<CR>
+nnoremap [minibuf]c       :new<CR>
+nnoremap [minibuf]<C-c>   :new<CR>
+nnoremap [minibuf]k       :bd<CR>
+nnoremap [minibuf]<C-k>   :bd<CR>
+nnoremap [minibuf]s       :IncBufSwitch<CR>
+nnoremap [minibuf]<C-s>   :IncBufSwitch<CR>
+nnoremap [minibuf]<Tab>   :wincmd w<CR>
+nnoremap [minibuf]O       :only<CR>
+nnoremap [minibuf]w       :ls<CR>
+nnoremap [minibuf]<C-w>   :ls<CR>
+nnoremap [minibuf]a       :e #<CR>
+nnoremap [minibuf]<C-a>   :e #<CR>
+nnoremap [minibuf]"       :BufExp<CR>
+nnoremap [minibuf]1   :e #1<CR>
+nnoremap [minibuf]2   :e #2<CR>
+nnoremap [minibuf]3   :e #3<CR>
+nnoremap [minibuf]4   :e #4<CR>
+nnoremap [minibuf]5   :e #5<CR>
+nnoremap [minibuf]6   :e #6<CR>
+nnoremap [minibuf]7   :e #7<CR>
+nnoremap [minibuf]8   :e #8<CR>
+nnoremap [minibuf]9   :e #9<CR>
 "}}}
 
 " surround.vim via. http://d.hatena.ne.jp/secondlife/20061225/1167032528"{{{
