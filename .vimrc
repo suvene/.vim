@@ -518,7 +518,7 @@ NeoBundle 'motemen/git-vim'
 "" ruby, rails
 NeoBundle 'ruby.vim'
 NeoBundle 'vim-ruby/vim-ruby'
-NeoBundle 'tpope/vim-rails'
+NeoBundle 'tpope/vim-rails' " rails.vim
 NeoBundle 'vim-scripts/VimRepress'
 
 "" misc
