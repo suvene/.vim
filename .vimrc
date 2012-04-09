@@ -487,6 +487,7 @@ NeoBundle 'kana/vim-surround'
 NeoBundle 'gmarik/vundle'
 NeoBundle 'tpope/vim-rails'
 NeoBundle 'scrooloose/nerdtree'
+NeoBundle 'vim-scripts/VimRepress'
 " BundleSearch 用に
 if !exists("loaded") | set runtimepath+=~/.vim/bundle/vundle.git/ | endif
 call vundle#rc()
@@ -546,7 +547,7 @@ nnoremap [minibuf]<C-k>   :bd<CR>
 nnoremap [minibuf]s       :IncBufSwitch<CR>
 nnoremap [minibuf]<C-s>   :IncBufSwitch<CR>
 nnoremap [minibuf]<Tab>   :wincmd w<CR>
-nnoremap [minibuf]O       :only<CR>
+nnoremap [minibuf]o       :only<CR>
 nnoremap [minibuf]w       :ls<CR>
 nnoremap [minibuf]<C-w>   :ls<CR>
 nnoremap [minibuf]a       :e #<CR>
@@ -722,6 +723,10 @@ call unite#set_substitute_pattern('file', '\*\*\+', '*', -1)
 call unite#set_substitute_pattern('file', '^\~', escape($HOME, '\'), -2)
 call unite#set_substitute_pattern('file', '\\\@<! ', '\\ ', -20)
 call unite#set_substitute_pattern('file', '\\ \@!', '/', -30)
+" }}}
+
+" VimRepress {{{
+let VIMPRESS = [{'username' : 'suVene', 'blog_url' : 'http://d.zeromemory.info/xmlrpc.php' }]
 " }}}
 
 " NERTTreeToggle {{{
