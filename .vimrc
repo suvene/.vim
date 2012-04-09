@@ -756,6 +756,11 @@ endif
 let g:neocomplcache_omni_patterns.cpp = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
 let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\h\w*\|\h\w*::'
 " }}}
+
+" ref.vim {{{
+let g:ref_use_vimproc = 1 "
+nnorema <Leader>hr :<C-u>Ref refe<Space><C-r><C-w><Enter>
+" }}}
 " for plugins }}}
 "---------------------------------------
 " }
