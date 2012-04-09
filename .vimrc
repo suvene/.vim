@@ -224,9 +224,9 @@ autocmd WinEnter * match WhitespaceEOL /\s\+$/
 set cursorline
 " カレントウィンドウにのみ罫線を引く
 augroup cch
-autocmd! cch
-autocmd WinLeave * set nocursorline
-autocmd WinEnter,BufRead * set cursorline
+  autocmd! cch
+  autocmd WinLeave * set nocursorline
+  autocmd WinEnter,BufRead * set cursorline
 augroup END
 ":hi clear CursorLine
 ":hi CursorLine gui=underline
@@ -490,13 +490,17 @@ call vundle#rc()
 
 "" vimdoc !
 NeoBundle 'vim-jp/vimdoc-ja'
+
 "" window, buf, file
 NeoBundle 'fholgado/minibufexpl.vim'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'ornicar/vim-mru'
+
 "" search
 NeoBundle 'grep.vim'
 NeoBundle 'othree/eregex.vim'
+NeoBundle 'matchit.vim'
+
 "" Edit
 NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'kana/vim-surround'
@@ -507,9 +511,10 @@ NeoBundle 'mattn/gist-vim'
 NeoBundle 'motemen/git-vim'
 
 "" ruby, rails
+NeoBundle 'ruby.vim'
+NeoBundle 'vim-ruby/vim-ruby'
 NeoBundle 'tpope/vim-rails'
 NeoBundle 'vim-scripts/VimRepress'
-NeoBundle 'ruby.vim'
 
 "" misc
 NeoBundle 'sudo.vim'
@@ -739,8 +744,20 @@ let VIMPRESS = [{'username' : 'suVene', 'blog_url' : 'http://d.zeromemory.info/x
 nnoremap <Leader>n :NERDTreeToggle<CR>
 " }}}
 " for plugins }}}
-" }
 "---------------------------------------
+" }
+
+
+"---------------------------------------
+" autocmd {{{
+"---------------------------------------
+augroup quickfixopen
+  autocmd!
+  autocmd QuickfixCmdPost make,grep,vimgrep,grepadd cw
+augroup END
+" autocmd }}}
+"--------------------------------------
+
 
 let loaded=1
 " vim:set ts=4 sts=4 sw=4 tw=0 et:
