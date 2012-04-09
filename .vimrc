@@ -509,6 +509,7 @@ NeoBundle 'matchit.zip'
 NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'kana/vim-surround'
 NeoBundle 'mattn/zencoding-vim'
+NeoBundle 'scrooloose/nerdcommenter.git'
 
 "" Git/Gist
 NeoBundle 'mattn/gist-vim'
