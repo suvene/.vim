@@ -468,6 +468,10 @@ NeoBundle 'Shougo/vimproc'
 " after install, turn shell ~/.vim/bundle/vimproc, (n,g)make -f your_machines_makefile
 NeoBundle 'Shougo/vimshell'
 NeoBundle 'Shougo/unite.vim'
+" BundleSearch 用に
+NeoBundle 'gmarik/vundle'
+if !exists("loaded") | set runtimepath+=~/.vim/bundle/vundle.git/ | endif
+call vundle#rc()
 
 " My Bundles here:
 "
@@ -475,38 +479,40 @@ NeoBundle 'Shougo/unite.vim'
 " NeoBundle 'tpope/vim-fugitive'
 " NeoBundle 'Lokaltog/vim-easymotion'
 " NeoBundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-NeoBundle 'vim-jp/vimdoc-ja'
-NeoBundle 'fholgado/minibufexpl.vim'
-NeoBundle 'Shougo/neocomplcache'
-NeoBundle 'othree/eregex.vim'
-NeoBundle 'ornicar/vim-mru'
-NeoBundle 'mattn/zencoding-vim'
-NeoBundle 'mattn/gist-vim'
-NeoBundle 'motemen/git-vim'
-NeoBundle 'kana/vim-surround'
-NeoBundle 'gmarik/vundle'
-NeoBundle 'tpope/vim-rails'
-NeoBundle 'scrooloose/nerdtree'
-NeoBundle 'vim-scripts/VimRepress'
-" BundleSearch 用に
-if !exists("loaded") | set runtimepath+=~/.vim/bundle/vundle.git/ | endif
-call vundle#rc()
-" NeoBundle 'tpope/vim-rails.git'
-
-
 "" vim-scripts repos
 " NeoBundle 'L9'
 " NeoBundle 'FuzzyFinder'
-NeoBundle 'grep.vim'
-NeoBundle 'ruby.vim'
-NeoBundle 'sudo.vim'
-
 "" non github repos
 " NeoBundle 'git://git.wincent.com/command-t.git'
-
 "" non git repos
 " NeoBundle 'http://svn.macports.org/repository/macports/contrib/mpvim/'
 " NeoBundle 'https://bitbucket.org/ns9tks/vim-fuzzyfinder'
+
+"" vimdoc !
+NeoBundle 'vim-jp/vimdoc-ja'
+"" window, buf, file
+NeoBundle 'fholgado/minibufexpl.vim'
+NeoBundle 'scrooloose/nerdtree'
+NeoBundle 'ornicar/vim-mru'
+"" search
+NeoBundle 'grep.vim'
+NeoBundle 'othree/eregex.vim'
+"" Edit
+NeoBundle 'Shougo/neocomplcache'
+NeoBundle 'kana/vim-surround'
+NeoBundle 'mattn/zencoding-vim'
+
+"" Git/Gist
+NeoBundle 'mattn/gist-vim'
+NeoBundle 'motemen/git-vim'
+
+"" ruby, rails
+NeoBundle 'tpope/vim-rails'
+NeoBundle 'vim-scripts/VimRepress'
+NeoBundle 'ruby.vim'
+
+"" misc
+NeoBundle 'sudo.vim'
 
 filetype plugin indent on     " required!
 " }}}
