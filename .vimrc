@@ -743,10 +743,18 @@ let VIMPRESS = [{'username' : 'suVene', 'blog_url' : 'http://d.zeromemory.info/x
 " NERTTreeToggle {{{
 nnoremap <Leader>n :NERDTreeToggle<CR>
 " }}}
+
+" neocomplcache {{{
+let g:neocomplcache_enable_at_startup = 1
+if !exists('g:neocomplcache_omni_patterns')
+  let g:neocomplcache_omni_patterns = {}
+endif
+let g:neocomplcache_omni_patterns.cpp = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
+let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\h\w*\|\h\w*::'
+" }}}
 " for plugins }}}
 "---------------------------------------
 " }
-
 
 "---------------------------------------
 " autocmd {{{
