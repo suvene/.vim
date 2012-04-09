@@ -488,8 +488,12 @@ call vundle#rc()
 " NeoBundle 'http://svn.macports.org/repository/macports/contrib/mpvim/'
 " NeoBundle 'https://bitbucket.org/ns9tks/vim-fuzzyfinder'
 
-"" vimdoc !
+"" doc !
 NeoBundle 'vim-jp/vimdoc-ja'
+NeoBundle 'thinca/vim-ref'
+
+"" helper
+NeoBundle 'thinca/vim-quickrun'
 
 "" window, buf, file
 NeoBundle 'fholgado/minibufexpl.vim'
@@ -499,7 +503,7 @@ NeoBundle 'ornicar/vim-mru'
 "" search
 NeoBundle 'grep.vim'
 NeoBundle 'othree/eregex.vim'
-NeoBundle 'matchit.vim'
+NeoBundle 'matchit.zip'
 
 "" Edit
 NeoBundle 'Shougo/neocomplcache'
