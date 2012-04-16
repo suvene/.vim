@@ -510,6 +510,7 @@ NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'kana/vim-surround'
 NeoBundle 'mattn/zencoding-vim'
 NeoBundle 'scrooloose/nerdcommenter.git'
+NeoBundle 'autodate.vim'
 
 "" Git/Gist
 NeoBundle 'mattn/gist-vim'
@@ -541,7 +542,7 @@ filetype plugin indent on     " required!
 "}}}
 
 " autodate.vim"{{{
-" let g:autodate_format = '%Y/%m/%d %H:%M:%S'
+ let g:autodate_format = '%Y/%m/%d %H:%M:%S'
 "}}}
 
 " minibufexpl.vim"{{{
