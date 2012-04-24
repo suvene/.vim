@@ -377,7 +377,7 @@ imap <C-Space> <C-x><C-o>
 let g:rubycomplete_buffer_loading = 1
 let g:rubycomplete_classes_in_global = 1
 " Bufferが乱れるのでコメントアウト
-"let g:rubycomplete_rails = 1
+let g:rubycomplete_rails = 1
 
 " Ctrl+Shift+Jで上に表示しているウィンドウをスクロールさせる
 nnoremap <C-S-J> <C-W>k<C-E><C-W><C-W>
@@ -499,7 +499,7 @@ NeoBundle 'thinca/vim-quickrun'
 "" window, buf, file
 NeoBundle 'fholgado/minibufexpl.vim'
 NeoBundle 'scrooloose/nerdtree'
-NeoBundle 'ornicar/vim-mru'
+" NeoBundle 'ornicar/vim-mru' uniteあるからいらない
 NeoBundle 'BufOnly.vim'
 
 "" search
@@ -513,6 +513,7 @@ NeoBundle 'kana/vim-surround'
 NeoBundle 'mattn/zencoding-vim'
 NeoBundle 'scrooloose/nerdcommenter.git'
 NeoBundle 'autodate.vim'
+NeoBundle 'YankRing.vim'
 
 "" Git/Gist
 NeoBundle 'mattn/gist-vim'
@@ -670,12 +671,12 @@ nnoremap <C-g><C-b> :<C-u>GrepBuffer<Space><C-r><C-w><Enter>
 "   http://nanasi.jp/articles/vim/mru_vim.html
 "   http://www.vim.org/scripts/script.php?script_id=521
 "   https://github.com/ornicar/vim-mru
-let g:MRU_Max_Entries=50 " default 10
-let g:MRU_Exclude_Files="^/tmp/.*\|^/var/tmp/.*"
-let g:MRU_Window_Height=15 " default 8
-let g:MRU_Use_Current_Window=0
-let g:MRU_Auto_Close=1
-noremap <C-@> :MRU<CR>
+"let g:MRU_Max_Entries=50 " default 10
+"let g:MRU_Exclude_Files="^/tmp/.*\|^/var/tmp/.*"
+"let g:MRU_Window_Height=15 " default 8
+"let g:MRU_Use_Current_Window=0
+"let g:MRU_Auto_Close=1
+"noremap <C-@> :MRU<CR>
 "}}}
 
 " blockdiff.vim http://nanasi.jp/articles/vim/blockdiff_vim.html"{{{
@@ -764,6 +765,10 @@ let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\h\w*\|\h\w*::'
 " ref.vim {{{
 let g:ref_use_vimproc = 1 "
 nnorema <Leader>hr :<C-u>Ref refe<Space><C-r><C-w><Enter>
+" }}}
+
+" rails.vim {{{
+let g:rails_level=4
 " }}}
 " for plugins }}}
 "---------------------------------------
