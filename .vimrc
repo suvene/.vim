@@ -376,7 +376,8 @@ imap <C-K> <ESC>"*pa
 imap <C-Space> <C-x><C-o>
 let g:rubycomplete_buffer_loading = 1
 let g:rubycomplete_classes_in_global = 1
-let g:rubycomplete_rails = 1
+" Bufferが乱れるのでコメントアウト
+"let g:rubycomplete_rails = 1
 
 " Ctrl+Shift+Jで上に表示しているウィンドウをスクロールさせる
 nnoremap <C-S-J> <C-W>k<C-E><C-W><C-W>
@@ -499,6 +500,7 @@ NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'fholgado/minibufexpl.vim'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'ornicar/vim-mru'
+NeoBundle 'BufOnly.vim'
 
 "" search
 NeoBundle 'grep.vim'
@@ -520,9 +522,9 @@ NeoBundle 'motemen/git-vim'
 NeoBundle 'ruby.vim'
 NeoBundle 'vim-ruby/vim-ruby'
 NeoBundle 'tpope/vim-rails' " rails.vim
-NeoBundle 'vim-scripts/VimRepress'
 
 "" misc
+NeoBundle 'vim-scripts/VimRepress'
 NeoBundle 'sudo.vim'
 
 filetype plugin indent on     " required!
