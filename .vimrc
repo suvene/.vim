@@ -762,6 +762,15 @@ if !exists('g:neocomplcache_omni_patterns')
 endif
 let g:neocomplcache_omni_patterns.cpp = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
 let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\h\w*\|\h\w*::'
+let g:neocomplcache_enable_auto_select = 1 " 1番目の候補を自動選択
+nnoremap  <Space>d. :<C-u>NeoComplCacheCachingDictionary<Enter> " 辞書読み込み
+inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>" " <TAB> completion.
+inoremap <expr><C-j> &filetype == 'vim' ? "\<C-x>\<C-v>\<C-p>" : "\<C-x>\<C-o>\<C-p>" " C-jでオムニ補完
+inoremap <expr><C-n>  pumvisible() ? "\<C-n>" : "\<C-x>\<C-u>\<C-p>" " C-nでneocomplcache補完
+inoremap <expr><C-p> pumvisible() ? "\<C-p>" : "\<C-p>\<C-n>" " C-pでkeyword補完
+" 補完候補が表示されている場合は確定。そうでない場合は改行
+inoremap <expr><CR>  pumvisible() ? neocomplcache#close_popup() : "<CR>"
+inoremap <expr><C-g>  neocomplcache#close_popup() " 補完をキャンセル
 " }}}
 
 " ref.vim {{{
