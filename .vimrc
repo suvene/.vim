@@ -376,7 +376,6 @@ imap <C-K> <ESC>"*pa
 imap <C-Space> <C-x><C-o>
 let g:rubycomplete_buffer_loading = 1
 let g:rubycomplete_classes_in_global = 1
-" Bufferが乱れるのでコメントアウト
 let g:rubycomplete_rails = 1
 
 " Ctrl+Shift+Jで上に表示しているウィンドウをスクロールさせる
@@ -501,6 +500,9 @@ NeoBundle 'fholgado/minibufexpl.vim'
 NeoBundle 'scrooloose/nerdtree'
 " NeoBundle 'ornicar/vim-mru' uniteあるからいらない
 NeoBundle 'BufOnly.vim'
+
+"" view
+NeoBundle 'vim-scripts/Changed'
 
 "" search
 NeoBundle 'grep.vim'
