@@ -106,6 +106,25 @@ if has('unix') && !has('gui_running')
         set term=builtin_xterm
     endif
     unlet uname
+
+  " via. http://d.hatena.ne.jp/thinca/20101215/1292340358
+  " Use meta keys in console.
+  function! s:use_meta_keys()  " {{{
+    for i in map(
+    \   range(char2nr('a'), char2nr('z'))
+    \ + range(char2nr('A'), char2nr('Z'))
+    \ + range(char2nr('0'), char2nr('9'))
+    \ , 'nr2char(v:val)')
+      " <ESC>O do not map because used by arrow keys.
+      if i != 'O'
+        execute 'nmap <ESC>' . i '<M-' . i . '>'
+      endif
+    endfor
+  endfunction  " }}}
+
+  call s:use_meta_keys()
+  map <NUL> <C-Space>
+  map! <NUL> <C-Space>
 endif
 
 " コンソール版で環境変数$DISPLAYが設定されていると起動が遅くなる件へ対応
@@ -529,6 +548,7 @@ NeoBundle 'tpope/vim-rails' " rails.vim
 "" misc
 NeoBundle 'vim-scripts/VimRepress'
 NeoBundle 'sudo.vim'
+NeoBundle 'mattn/webapi-vim'
 
 filetype plugin indent on     " required!
 " }}}
@@ -780,6 +800,17 @@ nnorema <Leader>hr :<C-u>Ref refe<Space><C-r><C-w><Enter>
 
 " rails.vim {{{
 let g:rails_level=4
+" }}}
+
+" YankRing {{{
+set viminfo+=!
+if has('mac')
+  let g:yankring_replace_n_pkey='<M-p>'
+  let g:yankring_replace_n_nkey='<M-n>'
+else
+  let g:yankring_replace_n_pkey='<A-p>'
+  let g:yankring_replace_n_nkey='<A-n>'
+endif
 " }}}
 " for plugins }}}
 "---------------------------------------
