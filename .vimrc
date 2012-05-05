@@ -521,7 +521,8 @@ NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'BufOnly.vim'
 
 "" view
-NeoBundle 'vim-scripts/Changed'
+" 画面がうるさいのでコメントアウト
+" NeoBundle 'vim-scripts/Changed'
 
 "" search
 NeoBundle 'grep.vim'
