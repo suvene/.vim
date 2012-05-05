@@ -314,10 +314,10 @@ set smartcase
 set wrapscan
 
 " from mac {
-" Ctrl-h でヘルプ
-nnoremap <C-h> :<C-u>help<Space>
+" Ctrl-h でヘルプ " window の移動とバッティングするのでマップ変更
+nnoremap <Leader>h :<C-u>help<Space> 
 " カーソル下のキーワードをヘルプでひく
-nnoremap <C-h><C-h> :<C-u>help<Space><C-r><C-w><Enter>
+ nnoremap <Leader>hh :<C-u>help<Space><C-r><C-w><Enter>
 " }
 " }}} /検索系
 "---------------------------------------
