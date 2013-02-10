@@ -297,6 +297,42 @@ if has('multi_byte_ime') || has('xim') || has('gui_macvim')
   " 挿入モードでのIME状態を記憶させない場合、次行のコメントを解除
   "inoremap <silent> <ESC> <ESC>:set iminsert=0<CR>
 endif
+
+""""""""""""""""""""""""""""""
+" 挿入モード時、ステータスラインの色を変更
+" http://sites.google.com/site/fudist/Home/vim-nihongo-ban/vim-color#color-ime
+""""""""""""""""""""""""""""""
+let g:hi_insert ='highlight StatusLine guifg=white guibg=blue gui=none ctermfg=black ctermbg=blue cterm=none'
+if has('syntax')
+  augroup InsertHook
+    autocmd!
+    autocmd InsertEnter * call s:StatusLine('Enter')
+    autocmd InsertLeave * call s:StatusLine('Leave')
+  augroup END
+endif
+let s:slhlcmd =''
+function! s:StatusLine(mode)
+  if a:mode=='Enter'
+    silent! let s:slhlcmd ='highlight '. s:GetHighlight('StatusLine')
+    silent exec g:hi_insert
+  else
+    highlight clear StatusLine
+    silent exec s:slhlcmd
+  endif
+endfunction
+function! s:GetHighlight(hi)
+  redir=> hl
+  exec'highlight '.a:hi
+  redir END
+  let hl = substitute(hl, '[\r\n]', '', 'g')
+  let hl = substitute(hl, 'xxx', '', '')
+  return hl
+endfunction
+
+"if has('unix') && !has('gui_running')
+"  " ESC後にすぐ反映されない対策
+"  inoremap <silent> <ESC> <ESC>
+"endif
 " }
 " }}} /編集系
 "---------------------------------------
