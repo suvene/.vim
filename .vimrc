@@ -586,6 +586,7 @@ NeoBundle 'tpope/vim-rails' " rails.vim
 NeoBundle 'vim-scripts/VimRepress'
 NeoBundle 'sudo.vim'
 NeoBundle 'mattn/webapi-vim'
+NeoBundle 'mattn/qiita-vim'
 
 filetype plugin indent on     " required!
 " }}}
