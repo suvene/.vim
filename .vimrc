@@ -549,6 +549,7 @@ NeoBundle 'thinca/vim-ref'
 
 "" helper
 NeoBundle 'thinca/vim-quickrun'
+NeoBundle 'kana/vim-fakeclip'
 
 "" window, buf, file
 NeoBundle 'fholgado/minibufexpl.vim'
