@@ -815,7 +815,10 @@ nnoremap <Leader>n :NERDTreeToggle<CR>
 " }}}
 
 " neocomplcache {{{
-let g:neocomplcache_enable_at_startup = 1
+if has('mac')
+  " CentOS 側で何故かエラーになるのでマックのみ
+  let g:neocomplcache_enable_at_startup = 1
+endif
 let g:neocomplcache_enable_smart_case = 1
 let g:neocomplcache_enable_underbar_completion = 1
 let g:neocomplcache_min_syntax_length = 3
