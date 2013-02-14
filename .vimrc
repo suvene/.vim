@@ -726,6 +726,8 @@ let Grep_Skip_Files = '*.bak *~'
 command! -nargs=1 Gb :GrepBuffer <args>
 " " カーソル下の単語をGrepBufferする
 nnoremap <C-g><C-b> :<C-u>GrepBuffer<Space><C-r><C-w><Enter>
+" " カーソル下の単語をFgrepする
+nnoremap <C-g><C-r> :<C-u>Fgrep<Space><C-r><C-w><Enter>
 "}}}
 
 " mru.vim via. http://d.hatena.ne.jp/secondlife/20060203/1138978661"{{{
