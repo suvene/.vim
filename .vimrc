@@ -497,6 +497,9 @@ nnoremap qM  :make<Space>
 nnoremap qg  :grep<Space>
 nnoremap qr  :cexpr ""<Return>
 nnoremap q   <Nop>
+
+
+nnoremap <C-[> :<C-U>pop<CR>
 " keymaps }}}
 "--------------------------------------
 
