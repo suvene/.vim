@@ -591,6 +591,7 @@ NeoBundle 'vim-scripts/VimRepress'
 NeoBundle 'sudo.vim'
 NeoBundle 'mattn/webapi-vim'
 NeoBundle 'suvene/qiita-vim'
+"NeoBundle 'blockdiff'
 
 filetype plugin indent on     " required!
 " }}}
@@ -790,26 +791,26 @@ au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>:q<CR>
 au FileType unite nnoremap <silent> <buffer> <C-g> :q<CR>
 au FileType unite inoremap <silent> <buffer> <C-g> <ESC>:q<CR>
 " via. http://d.hatena.ne.jp/thinca/20101027/1288190498
-call unite#set_substitute_pattern('file', '\$\w\+', '\=eval(submatch(0))', 200)
+call unite#custom#profile('file', 'substitute_patterns', {'pattern' : '\$\w\+', 'subst' : '\=eval(submatch(0,}),})', 'priority' : 200,})
 
-call unite#set_substitute_pattern('file', '[^~.]\zs/', '*/*', 20)
-call unite#set_substitute_pattern('file', '/\ze[^*]', '/*', 10)
+call unite#custom#profile('file', 'substitute_patterns', {'pattern' : '[^~.]\zs/', 'subst' : '*/*', 'priority' : 20,})
+call unite#custom#profile('file', 'substitute_patterns', {'pattern' : '/\ze[^*]', 'subst' : '/*', 'priority' : 10,})
+ 
+call unite#custom#profile('file', 'substitute_patterns', {'pattern' : '^@@', 'subst' : '\=fnamemodify(expand("#",}), ":p:h",})."/*"', 'priority' : 2,})
+call unite#custom#profile('file', 'substitute_patterns', {'pattern' : '^@', 'subst' : '\=getcwd(,})."/*"', 'priority' : 1,})
+call unite#custom#profile('file', 'substitute_patterns', {'pattern' : '^\\', 'subst' : '~/*', 'priority' : 100,})
 
-call unite#set_substitute_pattern('file', '^@@', '\=fnamemodify(expand("#"), ":p:h")."/*"', 2)
-call unite#set_substitute_pattern('file', '^@', '\=getcwd()."/*"', 1)
-call unite#set_substitute_pattern('file', '^\\', '~/*')
-
-call unite#set_substitute_pattern('file', '^;v', '~/.vim/*')
-call unite#set_substitute_pattern('file', '^;r', '\=$VIMRUNTIME."/*"')
+call unite#custom#profile('file', 'substitute_patterns', {'pattern' : '^;v', 'subst' : '~/.vim/*', 'priority' : 100,})
+call unite#custom#profile('file', 'substitute_patterns', {'pattern' : '^;r', 'subst' : '\=$VIMRUNTIME."/*"', 'priority' : 100,})
 if has('win32') || has('win64')
-  call unite#set_substitute_pattern('file', '^;p', 'C:/Program Files/*')
+  call unite#custom#profile('file', 'substitute_patterns', {'pattern' : '^;p', 'subst' : 'C:/Program Files/*', 'priority' : 100,})
 endif
 
-call unite#set_substitute_pattern('file', '\*\*\+', '*', -1)
-call unite#set_substitute_pattern('file', '^\~', escape($HOME, '\'), -2)
-call unite#set_substitute_pattern('file', '\\\@<! ', '\\ ', -20)
-call unite#set_substitute_pattern('file', '\\ \@!', '/', -30)
-" }}}
+call unite#custom#profile('file', 'substitute_patterns', {'pattern' : '\*\*\+', 'subst' : '*', 'priority' : -1,})
+call unite#custom#profile('file', 'substitute_patterns', {'pattern' : '^\~', 'subst' : escape($HOME, '\'), 'priority' : -2,})
+call unite#custom#profile('file', 'substitute_patterns', {'pattern' : '\\\@<! ', 'subst' : '\\ ', 'priority' : -20,})
+call unite#custom#profile('file', 'substitute_patterns', {'pattern' : '\\ \@!', 'subst' : '/', 'priority' : -30,})
+"}}}
 
 " VimRepress {{{
 let VIMPRESS = [{'username' : 'suVene', 'blog_url' : 'http://d.zeromemory.info/xmlrpc.php' }]
