@@ -370,6 +370,7 @@ set hidden
 set wildmenu
 " backupを1箇所に
 set backupdir=$HOME/backup/vim
+autocmd BufRead /tmp/crontab.* :set nobackup nowritebackup
 " swap
 let &directory = &backupdir
 " ファイル名だけで開けるようにするパス
