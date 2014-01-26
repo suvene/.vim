@@ -164,7 +164,18 @@ set incsearch       " do incremental searching
 map Q gq
 
 " In many terminal emulators the mouse works just fine, thus enable it.
-set mouse=a
+" http://yskwkzhr.blogspot.jp/2013/02/use-mouse-on-terminal-vim.html
+" Using the mouse on a terminal.
+if has('mouse')
+  set mouse=a
+  if has('mouse_sgr')
+    set ttymouse=sgr
+  elseif v:version > 703 || v:version is 703 && has('patch632') " I couldn't use has('mouse_sgr') :-(
+    set ttymouse=sgr
+  else
+    set ttymouse=xterm2
+  endif
+endif
 
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
