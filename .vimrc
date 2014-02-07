@@ -587,7 +587,10 @@ NeoBundle 'kana/vim-surround'
 NeoBundle 'mattn/zencoding-vim'
 NeoBundle 'scrooloose/nerdcommenter.git'
 NeoBundle 'autodate.vim'
-NeoBundle 'YankRing.vim'
+"NeoBundle 'YankRing.vim'
+NeoBundle 'LeafCage/yankround.vim'
+NeoBundle 'kien/ctrlp.vim'
+NeoBundle 'osyo-manga/vim-over'
 
 "" Git/Gist
 NeoBundle 'mattn/gist-vim'
@@ -878,15 +881,33 @@ nnorema <Leader>hr :<C-u>Ref refe<Space><C-r><C-w><Enter>
 let g:rails_level=4
 " }}}
 
-" YankRing {{{
-set viminfo+=!
-if has('mac')
-  let g:yankring_replace_n_pkey='<M-p>'
-  let g:yankring_replace_n_nkey='<M-n>'
-else
-  let g:yankring_replace_n_pkey='<A-p>'
-  let g:yankring_replace_n_nkey='<A-n>'
-endif
+" YankRing -> yankround {{{
+" set viminfo+=!
+" if has('mac')
+"   let g:yankring_replace_n_pkey='<M-p>'
+"   let g:yankring_replace_n_nkey='<M-n>'
+" else
+"   let g:yankring_replace_n_pkey='<A-p>'
+"   let g:yankring_replace_n_nkey='<A-n>'
+" endif
+"
+nmap p <Plug>(yankround-p)
+nmap P <Plug>(yankround-P)
+nmap <C-p> <Plug>(yankround-prev)
+nmap <C-n> <Plug>(yankround-next)
+"" 履歴取得数
+let g:yankround_max_history = 50
+""履歴一覧(kien/ctrlp.vim)
+nnoremap <silent>g<C-p> :<C-u>CtrlPYankRound<CR>
+" }}}
+
+"" over.vim {{{
+" over.vimの起動
+nnoremap <silent> <Leader>m :OverCommandLine<CR>
+" カーソル下の単語をハイライト付きで置換
+nnoremap sub :OverCommandLine<CR>%S/<C-r><C-w>//g<Left><Left>
+" コピーした文字列をハイライト付きで置換
+nnoremap subp :OverCommandLine<CR>%S!<C-r>=substitute(@0, '!', '\\!', 'g')<CR>!!gI<Left><Left><Left>
 " }}}
 " for plugins }}}
 "---------------------------------------
