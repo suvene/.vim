@@ -421,9 +421,9 @@ noremap : ;
 " マーク位置へのジャンプを行だけでなく桁位置も復元できるようにする
 map ' `
 " Ctrl+Nで次のバッファを表示
-noremap <silent> <C-N> :bnext<CR>
+noremap <silent> <C-n> :bnext<CR>
 " Ctrl+Pで前のバッファを表示
-noremap <silent> <C-P> :bprevious<CR>
+noremap <silent> <C-p> :bprevious<CR>
 " from mac {
 " Ctrl+Shift+Jで上に表示しているウィンドウをスクロールさせる
 "nnoremap <C-S-J> <C-W>k<C-E><C-W><C-W>
@@ -589,7 +589,6 @@ NeoBundle 'scrooloose/nerdcommenter.git'
 NeoBundle 'autodate.vim'
 "NeoBundle 'YankRing.vim'
 NeoBundle 'LeafCage/yankround.vim'
-NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'osyo-manga/vim-over'
 
 "" Git/Gist
@@ -635,11 +634,11 @@ let g:miniBufExplMapWindowNavArrows = 1
 let g:miniBufExplMapCTabSwitchBuffs = 1
 noremap [minibuf] <Nop>
 nmap <C-W> [minibuf]
-nnoremap [minibuf]<Space> :MBEbn<CR>
-nnoremap [minibuf]n       :MBEbn<CR>
-nnoremap [minibuf]<C-n>   :MBEbn<CR>
-nnoremap [minibuf]p       :MBEbp<CR>
-nnoremap [minibuf]<C-p>   :MBEbp<CR>
+nnoremap [minibuf]<Space> :bnext<CR>
+nnoremap [minibuf]n       :bnext<CR>
+nnoremap [minibuf]<C-N>   :bnext<CR>
+nnoremap [minibuf]p       :bprev<CR>
+nnoremap [minibuf]<C-P>   :bprev<CR>
 nnoremap [minibuf]c       :new<CR>
 nnoremap [minibuf]<C-c>   :new<CR>
 nnoremap [minibuf]k       :bd<CR>
@@ -883,22 +882,23 @@ let g:rails_level=4
 
 " YankRing -> yankround {{{
 " set viminfo+=!
-" if has('mac')
-"   let g:yankring_replace_n_pkey='<M-p>'
-"   let g:yankring_replace_n_nkey='<M-n>'
-" else
-"   let g:yankring_replace_n_pkey='<A-p>'
-"   let g:yankring_replace_n_nkey='<A-n>'
-" endif
-"
 nmap p <Plug>(yankround-p)
 nmap P <Plug>(yankround-P)
-nmap <C-p> <Plug>(yankround-prev)
-nmap <C-n> <Plug>(yankround-next)
+"if has('mac')
+"   let g:yankring_replace_n_pkey='<M-p>'
+"   let g:yankring_replace_n_nkey='<M-n>'
+"else
+"   let g:yankring_replace_n_pkey='<A-p>'
+"   let g:yankring_replace_n_nkey='<A-n>'
+"endif
+nmap jp <Plug>(yankround-prev)
+nmap jn <Plug>(yankround-next)
+
+
 "" 履歴取得数
 let g:yankround_max_history = 50
 ""履歴一覧(kien/ctrlp.vim)
-nnoremap <silent>g<C-p> :<C-u>CtrlPYankRound<CR>
+"nnoremap <silent>g<C-p> :<C-u>CtrlPYankRound<CR>
 " }}}
 
 "" over.vim {{{
