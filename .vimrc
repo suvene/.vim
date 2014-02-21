@@ -779,7 +779,7 @@ endif
 
 " Unite {{{
 let g:unite_enable_start_insert = 1
-let g:unite_source_file_mru_limit=100
+let g:unite_source_file_mru_limit=500
 let g:unite_source_file_mru_time_format = ''
 let g:unite_source_file_mru_ignore_pattern='.*\/$\|.*Application\ Data.*'
 noremap [unite] <Nop>
@@ -891,8 +891,8 @@ nmap P <Plug>(yankround-P)
 "   let g:yankring_replace_n_pkey='<A-p>'
 "   let g:yankring_replace_n_nkey='<A-n>'
 "endif
-nmap jp <Plug>(yankround-prev)
-nmap jn <Plug>(yankround-next)
+nmap <leader>k <Plug>(yankround-prev)
+nmap <leader>j <Plug>(yankround-next)
 
 
 "" 履歴取得数
