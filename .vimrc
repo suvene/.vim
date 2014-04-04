@@ -570,6 +570,9 @@ NeoBundle 'kana/vim-fakeclip'
 NeoBundle 'fholgado/minibufexpl.vim'
 NeoBundle 'scrooloose/nerdtree'
 " NeoBundle 'ornicar/vim-mru' uniteあるからいらない
+NeoBundle 'Shougo/neomru.vim'
+let g:neomru#file_mru_path=expand('~/.unite/neomru/file')
+let g:neomru#directory_mru_path=expand('~/.unite/neomru/direcroty')
 NeoBundle 'BufOnly.vim'
 
 "" view
