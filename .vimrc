@@ -636,7 +636,7 @@ let g:miniBufExplMapWindowNavVim = 1
 let g:miniBufExplMapWindowNavArrows = 1
 let g:miniBufExplMapCTabSwitchBuffs = 1
 noremap [minibuf] <Nop>
-nmap <C-W> [minibuf]
+nmap <C-E> [minibuf]
 nnoremap [minibuf]<Space> :bnext<CR>
 nnoremap [minibuf]n       :bnext<CR>
 nnoremap [minibuf]<C-N>   :bnext<CR>
